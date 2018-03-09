@@ -4,12 +4,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 
 
 /**
@@ -28,6 +32,8 @@ public class TramiteDocFragment extends Fragment {
 
     private Button btn_ver_document;
     private Button btn_seguir_document;
+    private ScrollView scrollView_01;
+    private ProgressBar progressBar;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -70,11 +76,23 @@ public class TramiteDocFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        LinearLayout linearLayout = (LinearLayout) inflater.inflate(R.layout.fragment_tramite_doc, container, false);
+        RelativeLayout linearLayout = (RelativeLayout) inflater.inflate(R.layout.fragment_tramite_doc, container, false);
         //return inflater.inflate(R.layout.fragment_tramite_doc, container, false);
+
+        scrollView_01 = (ScrollView) linearLayout.findViewById(R.id.scrollView_01);
+        progressBar = (ProgressBar) linearLayout.findViewById(R.id.ProgressBar_01);
         btn_ver_document = (Button) linearLayout.findViewById(R.id.btn_card_main1_action1);
         btn_seguir_document = (Button) linearLayout.findViewById(R.id.btn_card_main1_action2);
 
+
+        progressBar.setVisibility(View.VISIBLE);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                scrollView_01.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.GONE);
+            }
+        }, 1800);
 
         btn_ver_document.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,7 +105,8 @@ public class TramiteDocFragment extends Fragment {
         btn_seguir_document.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent in = new Intent(getContext(), SeguimientoActivity.class);
+                startActivity(in);
             }
         });
 
