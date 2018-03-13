@@ -30,6 +30,7 @@ public class MiMinisterioFragment extends Fragment {
 
     private CardView cardView_tradoc;
     private CardView cardView_predios;
+    private CardView cardView_agenda;
 
 
     // TODO: Rename and change types of parameters
@@ -77,14 +78,22 @@ public class MiMinisterioFragment extends Fragment {
         LinearLayout linearLayout = (LinearLayout) inflater.inflate(R.layout.fragment_mi_ministerio, container, false);
 
         cardView_predios = (CardView) linearLayout.findViewById(R.id.cardV_Predios);
+        cardView_agenda = (CardView) linearLayout.findViewById(R.id.cardV_Ministerial);
         cardView_tradoc = (CardView) linearLayout.findViewById(R.id.cardV_TraDoc);
 
         cardView_predios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getContext(), "Predios del MINDEF ", Toast.LENGTH_LONG).show();
-                Intent i = new Intent(getContext(),MapsActivity.class);
+                Intent i = new Intent(getContext(), MapsActivity.class);
                 startActivity(i);
+            }
+        });
+        cardView_agenda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), AgendaMinisterialActivity.class);
+                startActivity(intent);
             }
         });
         cardView_tradoc.setOnClickListener(new View.OnClickListener() {

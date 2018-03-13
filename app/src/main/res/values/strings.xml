@@ -13,4 +13,6 @@
     <string name="title_activity_maps_detalle">MapsDetalleActivity</string>
     <string name="title_activity_documento">DocumentoActivity</string>
     <string name="title_activity_seguimiento">SeguimientoActivity</string>
+    <string name="title_activity_agenda_ministerial">AgendaMinisterialActivity</string>
+    <string name="title_activity_ministerio">MinisterioActivity</string>
 </resources>

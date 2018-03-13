@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,14 +9,99 @@
     tools:context="com.example.codehans.trackingdocuments.SeguimientoActivity"
     tools:showIn="@layout/activity_seguimiento">
 
-    <SeekBar
-        android:layout_margin="16dp"
-        android:id="@+id/seekBar_peticion"
+    <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+        android:id="@+id/verticalSeekBarWrapper"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1.01"
-        android:max="3"
-        android:progress="3" />
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:layout_marginTop="80dp">
 
-</LinearLayout>
+        <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+            android:id="@+id/mySeekBar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:max="6"
+            android:progress="4"
+            android:splitTrack="false"
+            app:seekBarRotation="CW90" /> <!-- Rotation: CW90 or CW270 -->
+    </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignTop="@+id/verticalSeekBarWrapper"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_toEndOf="@+id/verticalSeekBarWrapper"
+        android:layout_toRightOf="@+id/verticalSeekBarWrapper">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Recepcion de documento" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="14/01/2018"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignEnd="@+id/cardView"
+        android:layout_alignLeft="@+id/cardView"
+        android:layout_alignRight="@+id/cardView"
+        android:layout_alignStart="@+id/cardView"
+        android:layout_below="@+id/cardView"
+        android:layout_marginTop="24dp" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignEnd="@+id/cardView2"
+        android:layout_alignLeft="@+id/cardView2"
+        android:layout_alignRight="@+id/cardView2"
+        android:layout_alignStart="@+id/cardView2"
+        android:layout_below="@+id/cardView2"
+        android:layout_marginTop="24dp" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView4"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignEnd="@+id/cardView3"
+        android:layout_alignLeft="@+id/cardView3"
+        android:layout_alignRight="@+id/cardView3"
+        android:layout_alignStart="@+id/cardView3"
+        android:layout_below="@+id/cardView3"
+        android:layout_marginTop="24dp" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView5"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignEnd="@+id/cardView4"
+        android:layout_alignLeft="@+id/cardView4"
+        android:layout_alignRight="@+id/cardView4"
+        android:layout_alignStart="@+id/cardView4"
+        android:layout_below="@+id/cardView4"
+        android:layout_marginTop="24dp" />
+
+
+</RelativeLayout>

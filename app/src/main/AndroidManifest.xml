@@ -64,6 +64,14 @@
         <activity
             android:name=".SeguimientoActivity"
             android:label="@string/title_activity_seguimiento"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".AgendaMinisterialActivity"
+            android:label="@string/title_activity_agenda_ministerial"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".MinisterioActivity"
+            android:label="@string/title_activity_ministerio"
             android:theme="@style/AppTheme"></activity>
     </application>
 
