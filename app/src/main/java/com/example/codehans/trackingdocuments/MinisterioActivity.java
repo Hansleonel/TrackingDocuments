@@ -12,10 +12,7 @@ import com.bumptech.glide.Glide;
 
 public class MinisterioActivity extends AppCompatActivity {
 
-    private ImageView imageView_AgendaMindef,imageView_AgendaMindef2,imageView_AgendaMindef3,imageView_AgendaMindef4,imageView_AgendaMindef5,imageView_AgendaMindef6
-            ,imageView_AgendaMindef7,imageView_AgendaMindef8,imageView_AgendaMindef9,imageView_AgendaMindef10,imageView_AgendaMindef11,imageView_AgendaMindef12
-            ,imageView_AgendaMindef13,imageView_AgendaMindef14,imageView_AgendaMindef15,imageView_AgendaMindef16,imageView_AgendaMindef17,imageView_AgendaMindef18
-            ,imageView_AgendaMindef19,imageView_AgendaMindef20;
+    private ImageView imageView_AgendaMindef, imageView_AgendaMindef2, imageView_AgendaMindef3, imageView_AgendaMindef4, imageView_AgendaMindef5, imageView_AgendaMindef6, imageView_AgendaMindef7, imageView_AgendaMindef8, imageView_AgendaMindef9, imageView_AgendaMindef10, imageView_AgendaMindef11, imageView_AgendaMindef12, imageView_AgendaMindef13, imageView_AgendaMindef14, imageView_AgendaMindef15, imageView_AgendaMindef16, imageView_AgendaMindef17, imageView_AgendaMindef18, imageView_AgendaMindef19, imageView_AgendaMindef20;
 
 
     @Override
@@ -23,6 +20,7 @@ public class MinisterioActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ministerio);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Agenda Ministerio");
         setSupportActionBar(toolbar);
 
         imageView_AgendaMindef = (ImageView) findViewById(R.id.imgV_AgendaMindef);

@@ -60,7 +60,7 @@
                                 android:layout_width="32dp"
                                 android:layout_height="32dp"
                                 android:layout_margin="8dp"
-                                android:src="@drawable/ic_save_black_24dp" />
+                                app:srcCompat="@drawable/ic_save_black_24dp" />
 
                         </LinearLayout>
 
@@ -84,31 +84,11 @@
                         android:text="Documento de Pensiones"
                         android:textSize="24dp" />
 
-                    <TextView
+                    <ImageView
+                        android:layout_margin="8dp"
+                        android:id="@+id/ImageV_document"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_marginTop="16dp"
-                        android:text="Descripcion   del  Documento  con  sus respectivas fechas de entrega y demas caracteristicas.
-
-
-Dicho   Documento   posee   un   motivo una fecha de entrega y su propiedad de seguimiento.
-
-Tambien figurará en caso sea necesario la  persona  encargada  de  firmar dicho documento.
-
-
-
-Descripcion del documento aplimada hasta cierto nivel dependiedo de la importancia del documento
-
-La importancia del documento puede variar de acuerdo ademas de acuerdo al codigo establecido podemos identificar el tipo de documento las actualizaciones se daran en tiempo real
-
-Este documento es solo un ejemplo.
-
-Cada documento contara ocn un tutilo y el cotenido del mismo, ademas el autor puede consultar el estado de dicho documento
-
-atte. El autor el Documento"
-                        android:textSize="18dp" />
+                        android:layout_height="400dp" />
 
                 </LinearLayout>
 

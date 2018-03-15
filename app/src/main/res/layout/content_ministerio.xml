@@ -46,22 +46,36 @@
                         android:textSize="16sp" />
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <ImageView
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginRight="8dp"
-                            android:src="@drawable/ic_insert_comment_black_24dp" />
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                app:srcCompat="@drawable/ic_insert_comment_black_24dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Opinion y sugerencias"
+                                android:textColor="@color/colorPrimary" />
+                        </LinearLayout>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Opinion y sugerencias"
-                            android:textColor="@color/colorPrimary" />
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:gravity="right"
+                            android:text="14/02/2017" />
                     </LinearLayout>
 
                     <TextView
@@ -158,6 +172,14 @@
                             android:layout_height="wrap_content"
                             android:text="Opinion y sugerencias"
                             android:textColor="@color/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:gravity="right"
+                            android:text="15/02/2017" />
                     </LinearLayout>
 
                     <TextView
@@ -184,7 +206,7 @@
                         <ImageView
                             android:layout_width="16dp"
                             android:layout_height="16dp"
-                            android:src="@drawable/ic_watch_black_24dp" />
+                            app:srcCompat="@drawable/ic_watch_black_24dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -198,7 +220,7 @@
                             android:layout_height="16dp"
                             android:layout_marginLeft="4dp"
                             android:layout_marginRight="4dp"
-                            android:src="@drawable/ic_insert_comment_black_24dp" />
+                            app:srcCompat="@drawable/ic_insert_comment_black_24dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -247,13 +269,21 @@
                             android:layout_height="16dp"
                             android:layout_marginLeft="8dp"
                             android:layout_marginRight="8dp"
-                            android:src="@drawable/ic_insert_comment_black_24dp" />
+                            app:srcCompat="@drawable/ic_insert_comment_black_24dp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Opinion y sugerencias"
                             android:textColor="@color/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:gravity="right"
+                            android:text="16/02/2017" />
                     </LinearLayout>
 
                     <TextView
@@ -280,7 +310,7 @@
                         <ImageView
                             android:layout_width="16dp"
                             android:layout_height="16dp"
-                            android:src="@drawable/ic_watch_black_24dp" />
+                            app:srcCompat="@drawable/ic_watch_black_24dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -294,7 +324,7 @@
                             android:layout_height="16dp"
                             android:layout_marginLeft="4dp"
                             android:layout_marginRight="4dp"
-                            android:src="@drawable/ic_insert_comment_black_24dp" />
+                            app:srcCompat="@drawable/ic_insert_comment_black_24dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -343,13 +373,21 @@
                             android:layout_height="16dp"
                             android:layout_marginLeft="8dp"
                             android:layout_marginRight="8dp"
-                            android:src="@drawable/ic_insert_comment_black_24dp" />
+                            app:srcCompat="@drawable/ic_insert_comment_black_24dp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Opinion y sugerencias"
                             android:textColor="@color/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:gravity="right"
+                            android:text="17/02/2017" />
                     </LinearLayout>
 
                     <TextView
@@ -446,6 +484,15 @@
                             android:layout_height="wrap_content"
                             android:text="Opinion y sugerencias"
                             android:textColor="@color/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:gravity="right"
+                            android:text="18/02/2017" />
+
                     </LinearLayout>
 
                     <TextView
@@ -542,6 +589,14 @@
                             android:layout_height="wrap_content"
                             android:text="Opinion y sugerencias"
                             android:textColor="@color/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:gravity="right"
+                            android:text="14/02/2017" />
                     </LinearLayout>
 
                     <TextView
@@ -638,6 +693,14 @@
                             android:layout_height="wrap_content"
                             android:text="Opinion y sugerencias"
                             android:textColor="@color/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:gravity="right"
+                            android:text="19/02/2017" />
                     </LinearLayout>
 
                     <TextView
@@ -734,6 +797,14 @@
                             android:layout_height="wrap_content"
                             android:text="Opinion y sugerencias"
                             android:textColor="@color/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:gravity="right"
+                            android:text="20/02/2017" />
                     </LinearLayout>
 
                     <TextView
@@ -830,6 +901,14 @@
                             android:layout_height="wrap_content"
                             android:text="Opinion y sugerencias"
                             android:textColor="@color/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:gravity="right"
+                            android:text="21/02/2017" />
                     </LinearLayout>
 
                     <TextView
@@ -926,6 +1005,13 @@
                             android:layout_height="wrap_content"
                             android:text="Opinion y sugerencias"
                             android:textColor="@color/colorPrimary" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:gravity="right"
+                            android:text="21/02/2017" />
                     </LinearLayout>
 
                     <TextView
@@ -1022,6 +1108,13 @@
                             android:layout_height="wrap_content"
                             android:text="Opinion y sugerencias"
                             android:textColor="@color/colorPrimary" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:gravity="right"
+                            android:text="24/02/2017" />
                     </LinearLayout>
 
                     <TextView
@@ -1118,6 +1211,13 @@
                             android:layout_height="wrap_content"
                             android:text="Opinion y sugerencias"
                             android:textColor="@color/colorPrimary" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:gravity="right"
+                            android:text="26/02/2017" />
                     </LinearLayout>
 
                     <TextView
@@ -1144,7 +1244,7 @@
                         <ImageView
                             android:layout_width="16dp"
                             android:layout_height="16dp"
-                            android:src="@drawable/ic_watch_black_24dp" />
+                            app:srcCompat="@drawable/ic_watch_black_24dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -1158,7 +1258,7 @@
                             android:layout_height="16dp"
                             android:layout_marginLeft="4dp"
                             android:layout_marginRight="4dp"
-                            android:src="@drawable/ic_insert_comment_black_24dp" />
+                            app:srcCompat="@drawable/ic_insert_comment_black_24dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -1214,6 +1314,14 @@
                             android:layout_height="wrap_content"
                             android:text="Opinion y sugerencias"
                             android:textColor="@color/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:gravity="right"
+                            android:text="16/03/2017" />
                     </LinearLayout>
 
                     <TextView
