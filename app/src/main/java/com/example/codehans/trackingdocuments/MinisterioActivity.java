@@ -45,12 +45,12 @@ public class MinisterioActivity extends AppCompatActivity {
         imageView_AgendaMindef20 = (ImageView) findViewById(R.id.imgV_AgendaMindef20);
 
         Glide.with(getApplicationContext())
-                .load("https://www.mindef.gob.pe/informacion/noticias/img-jpg/np_3827_20180312001721.jpg")
+                .load("https://www.mindef.gob.pe/informacion/noticias/img-jpg/np_3842_20180407191238.jpg")
                 .crossFade()
                 .centerCrop()
                 .into(imageView_AgendaMindef);
         Glide.with(getApplicationContext())
-                .load("http://www.mindef.gob.pe/informacion/noticias/img-jpg/album_1261_10192.jpg")
+                .load("https://www.mindef.gob.pe/informacion/noticias/img-jpg/np_3841_20180406223749.jpg")
                 .crossFade()
                 .centerCrop()
                 .into(imageView_AgendaMindef2);

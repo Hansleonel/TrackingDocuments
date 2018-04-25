@@ -31,6 +31,7 @@ public class MiMinisterioFragment extends Fragment {
     private CardView cardView_tradoc;
     private CardView cardView_predios;
     private CardView cardView_agenda;
+    private CardView cardView_streaming;
 
 
     // TODO: Rename and change types of parameters
@@ -80,6 +81,7 @@ public class MiMinisterioFragment extends Fragment {
         cardView_predios = (CardView) linearLayout.findViewById(R.id.cardV_Predios);
         cardView_agenda = (CardView) linearLayout.findViewById(R.id.cardV_Ministerial);
         cardView_tradoc = (CardView) linearLayout.findViewById(R.id.cardV_TraDoc);
+        cardView_streaming = (CardView) linearLayout.findViewById(R.id.cardV_Streaming);
 
         cardView_predios.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,6 +104,13 @@ public class MiMinisterioFragment extends Fragment {
                 Fragment fragment = new TramiteDocFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.ConstraintLayout, fragment).addToBackStack(null).commit();
+            }
+        });
+        cardView_streaming.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), StreamingFuerzas.class);
+                startActivity(i);
             }
         });
 

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,11 +15,27 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -34,6 +51,12 @@ public class TramiteDocFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    public static final String URL_TRACKING = "http://10.24.9.6:8080/sistradoc/0000740857.json";
+
+    private EditText editText_nro_doc;
+    private EditText editText_date_year;
+    private Button btn_search;
 
     private Button btn_ver_document;
     private Button btn_seguir_document;
@@ -61,8 +84,11 @@ public class TramiteDocFragment extends Fragment {
     private CardView cardView08;
     private CardView cardView09;
     private CardView cardView10;
+    private TextView txtV_date;
+    private TextView txtV_cod;
+    private TextView txtV_tittle;
 
-    private AutoCompleteTextView autoCompleteTextView_tradoc;
+    //private AutoCompleteTextView autoCompleteTextView_tradoc;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -110,9 +136,15 @@ public class TramiteDocFragment extends Fragment {
 
         scrollView_01 = (ScrollView) linearLayout.findViewById(R.id.scrollView_01);
         progressBar = (ProgressBar) linearLayout.findViewById(R.id.ProgressBar_01);
+
+
+        editText_nro_doc = (EditText) linearLayout.findViewById(R.id.edt_doc);
+        editText_date_year = (EditText) linearLayout.findViewById(R.id.edt_year);
+        btn_search = (Button) linearLayout.findViewById(R.id.btn_search_doc);
+
         btn_ver_document = (Button) linearLayout.findViewById(R.id.btn_card_main1_action1);
         btn_seguir_document = (Button) linearLayout.findViewById(R.id.btn_card_main1_action2);
-        btn_ver_document2 = (Button) linearLayout.findViewById(R.id.btn_card_main2_action1);
+        /*btn_ver_document2 = (Button) linearLayout.findViewById(R.id.btn_card_main2_action1);
         btn_seguir_document2 = (Button) linearLayout.findViewById(R.id.btn_card_main2_action2);
         btn_ver_document3 = (Button) linearLayout.findViewById(R.id.btn_card_main3_action1);
         btn_seguir_document3 = (Button) linearLayout.findViewById(R.id.btn_card_main3_action2);
@@ -123,28 +155,39 @@ public class TramiteDocFragment extends Fragment {
         btn_ver_document6 = (Button) linearLayout.findViewById(R.id.btn_card_main6_action1);
         btn_seguir_document6 = (Button) linearLayout.findViewById(R.id.btn_card_main6_action2);
         btn_ver_document7 = (Button) linearLayout.findViewById(R.id.btn_card_main7_action1);
-        btn_seguir_document7 = (Button) linearLayout.findViewById(R.id.btn_card_main7_action2);
-        autoCompleteTextView_tradoc = (AutoCompleteTextView) linearLayout.findViewById(R.id.AutoCompleteTxtV);
+        btn_seguir_document7 = (Button) linearLayout.findViewById(R.id.btn_card_main7_action2);*/
+        //autoCompleteTextView_tradoc = (AutoCompleteTextView) linearLayout.findViewById(R.id.AutoCompleteTxtV);
         cardView01 = (CardView) linearLayout.findViewById(R.id.cardV_01);
-        cardView02 = (CardView) linearLayout.findViewById(R.id.cardV_02);
-        cardView03 = (CardView) linearLayout.findViewById(R.id.cardV_03);
-        cardView04 = (CardView) linearLayout.findViewById(R.id.cardV_04);
-        cardView05 = (CardView) linearLayout.findViewById(R.id.cardV_05);
-        cardView06 = (CardView) linearLayout.findViewById(R.id.cardV_06);
-        cardView07 = (CardView) linearLayout.findViewById(R.id.cardV_07);
-        cardView08 = (CardView) linearLayout.findViewById(R.id.cardV_08);
-        cardView09 = (CardView) linearLayout.findViewById(R.id.cardV_09);
-        cardView10 = (CardView) linearLayout.findViewById(R.id.cardV_10);
+        //cardView02 = (CardView) linearLayout.findViewById(R.id.cardV_02);
+        //cardView03 = (CardView) linearLayout.findViewById(R.id.cardV_03);
+        //cardView04 = (CardView) linearLayout.findViewById(R.id.cardV_04);
+        //cardView05 = (CardView) linearLayout.findViewById(R.id.cardV_05);
+        //cardView06 = (CardView) linearLayout.findViewById(R.id.cardV_06);
+        //cardView07 = (CardView) linearLayout.findViewById(R.id.cardV_07);
+        //cardView08 = (CardView) linearLayout.findViewById(R.id.cardV_08);
+        //cardView09 = (CardView) linearLayout.findViewById(R.id.cardV_09);
+        //cardView10 = (CardView) linearLayout.findViewById(R.id.cardV_10);
+        txtV_date = (TextView) linearLayout.findViewById(R.id.txtV_date);
+        txtV_cod = (TextView) linearLayout.findViewById(R.id.txtV_cod);
+        txtV_tittle = (TextView) linearLayout.findViewById(R.id.txtV_tittle);
+
+        btn_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                seguimiento_preview();
+                progressBar.setVisibility(View.VISIBLE);
+            }
+        });
 
         String[] Documents = new String[]{
-                "2628", "1456", "1009", "1200", "1900", "2100", "2800", "1286", "1453", "Todos los documentos"
+                "2628", "1456", "1009", "000074085", "1900", "2100", "2800", "1286", "1453", "Todos los documentos"
         };
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),
                 android.R.layout.simple_dropdown_item_1line, Documents);
 
-        autoCompleteTextView_tradoc.setAdapter(adapter);
+        //autoCompleteTextView_tradoc.setAdapter(adapter);
 
-        autoCompleteTextView_tradoc.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        /*autoCompleteTextView_tradoc.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 TextView textView = (TextView) view;
@@ -181,7 +224,7 @@ public class TramiteDocFragment extends Fragment {
                     cardView08.setVisibility(View.GONE);
                     cardView09.setVisibility(View.GONE);
                     cardView10.setVisibility(View.GONE);
-                } else if (textView.getText().toString().equals("1200")) {
+                } else if (textView.getText().toString().equals("000074085")) {
                     cardView01.setVisibility(View.GONE);
                     cardView02.setVisibility(View.GONE);
                     cardView03.setVisibility(View.GONE);
@@ -228,13 +271,16 @@ public class TramiteDocFragment extends Fragment {
                 }
             }
         });
+        */
+
+
 
 
         progressBar.setVisibility(View.VISIBLE);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                scrollView_01.setVisibility(View.VISIBLE);
+                //scrollView_01.setVisibility(View.VISIBLE);
                 progressBar.setVisibility(View.GONE);
             }
         }, 1800);
@@ -255,24 +301,69 @@ public class TramiteDocFragment extends Fragment {
             }
         });
 
-        btn_ver_document2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intento = new Intent(getContext(), DocumentoActivity.class);
-                startActivity(intento);
-            }
-        });
-
-        btn_seguir_document2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), SeguimientoActivity.class);
-                startActivity(intent);
-            }
-        });
 
 
         return linearLayout;
+    }
+
+    private void seguimiento_preview() {
+        JSONObject js = new JSONObject();
+        try {
+            js.put("anno", "2017");
+            js.put("codigoexpediente", "00001");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        // Make request for JSONObject
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(
+                Request.Method.GET, URL_TRACKING, js,
+
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONObject jsData = (JSONObject) response.get("data");
+                            String date = jsData.getString("doc_fechadoc");
+                            String codigo = jsData.getString("doc_codigo");
+                            String tittle = jsData.getString("tdo_descripcion");
+
+                            txtV_date.setText(date);
+                            txtV_cod.setText(codigo);
+                            txtV_tittle.setText(tittle);
+                            progressBar.setVisibility(View.GONE);
+                            scrollView_01.setVisibility(View.VISIBLE);
+
+                            Log.d("RESPONSE CORRECTO", response.get("msg") + " ");
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d("eRRor Response", "Error: " + error.toString());
+                scrollView_01.setVisibility(View.GONE);
+                //Toast.makeText(getContext(), "" + error.toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(),"No se encontraron documentos con esa informacion",Toast.LENGTH_LONG).show();
+            }
+        }) {
+
+            /**
+             * Passing some request headers
+             */
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Content-Type", "application/json; charset=utf-8");
+                //headers.put("Authorization", "Bearer " + TOKEN);
+                return headers;
+            }
+        };
+        // Adding request to request queue
+        Volley.newRequestQueue(getContext()).add(jsonObjReq);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

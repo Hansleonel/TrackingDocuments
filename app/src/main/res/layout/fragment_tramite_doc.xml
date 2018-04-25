@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context="com.example.codehans.trackingdocuments.TramiteDocFragment">
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -13,26 +13,64 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <AutoCompleteTextView
-            android:id="@+id/AutoCompleteTxtV"
+        <!-- <AutoCompleteTextView
+             android:id="@+id/AutoCompleteTxtV"
+             android:layout_width="match_parent"
+             android:layout_height="45dp"
+             android:layout_marginLeft="20dp"
+             android:layout_marginRight="20dp"
+             android:layout_marginTop="20dp"
+             android:background="@drawable/search_view"
+             android:drawableLeft="@drawable/ic_search_black_24dp"
+             android:drawablePadding="20dp"
+             android:drawableStart="@drawable/ic_search_black_24dp"
+             android:hint="Número de Documento"
+             android:paddingLeft="10dp"
+             android:paddingStart="10dp" /> -->
+
+        <EditText
+            android:id="@+id/edt_doc"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/search_view"
-            android:drawableLeft="@drawable/ic_search_black_24dp"
+            android:background="@drawable/edit_text_view"
+            android:drawableLeft="@drawable/ic_my_location_black_24dp"
             android:drawablePadding="20dp"
-            android:drawableStart="@drawable/ic_search_black_24dp"
-            android:hint="Número de Documento"
+            android:drawableStart="@drawable/ic_my_location_black_24dp"
+            android:hint="Ingrese el N° de documento"
             android:paddingLeft="10dp"
             android:paddingStart="10dp" />
 
+        <EditText
+            android:id="@+id/edt_year"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edit_text_view"
+            android:drawableLeft="@drawable/ic_date_range_black_24dp"
+            android:drawablePadding="20dp"
+            android:hint="Ingrese el año del Documento"
+            android:paddingLeft="10dp"
+            android:paddingStart="10dp" />
+
+        <Button
+            android:id="@+id/btn_search_doc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Buscar Documento"
+            android:textColor="@android:color/white" />
+
         <ScrollView
-            android:visibility="gone"
             android:id="@+id/scrollView_01"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -43,7 +81,9 @@
                     android:id="@+id/cardV_01"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp">
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -70,6 +110,7 @@
                                 android:orientation="horizontal">
 
                                 <TextView
+                                    android:id="@+id/txtV_date"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="8dp"
@@ -86,15 +127,17 @@
                         </LinearLayout>
 
                         <TextView
+                            android:id="@+id/txtV_cod"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
                             android:layout_marginRight="8dp"
                             android:text="2628"
                             android:textColor="@color/colorAccent"
-                            android:textSize="32dp" />
+                            android:textSize="24dp" />
 
                         <TextView
+                            android:id="@+id/txtV_tittle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="8dp"
@@ -130,12 +173,12 @@
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
 
-                <android.support.v7.widget.CardView
+                <!--<android.support.v7.widget.CardView
                     android:id="@+id/cardV_02"
-                    android:visibility="visible"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp">
+                    android:layout_margin="8dp"
+                    android:visibility="visible">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -344,6 +387,7 @@
                                 android:orientation="horizontal">
 
                                 <TextView
+                                    android:id="@+id/txtV_date"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="8dp"
@@ -360,15 +404,17 @@
                         </LinearLayout>
 
                         <TextView
+                            android:id="@+id/txtV_cod"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
                             android:layout_marginRight="8dp"
-                            android:text="1200"
+                            android:text="000074085"
                             android:textColor="@color/colorAccent"
-                            android:textSize="32dp" />
+                            android:textSize="16dp" />
 
                         <TextView
+                            android:id="@+id/txtV_tittle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="8dp"
@@ -949,7 +995,7 @@
                         </LinearLayout>
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
+                </android.support.v7.widget.CardView>-->
 
             </LinearLayout>
         </ScrollView>

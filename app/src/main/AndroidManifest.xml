@@ -72,6 +72,14 @@
         <activity
             android:name=".MinisterioActivity"
             android:label="@string/title_activity_ministerio"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".StreamingFuerzas"
+            android:label="@string/title_activity_streaming_fuerzas"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".LiveStreamingActivity"
+            android:label="@string/title_activity_live_streaming"
             android:theme="@style/AppTheme"></activity>
     </application>
 

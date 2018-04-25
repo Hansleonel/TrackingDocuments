@@ -34,7 +34,7 @@ public class AgendaMinisterialActivity extends AppCompatActivity {
         imageView_evento04 = (ImageView) findViewById(R.id.imgV_Live04);
 
         Glide.with(getApplicationContext())
-                .load("https://gestion.pe/files/listing_ec_flujo_xx/uploads/2018/01/09/5a553d9e0d8f0.jpeg")
+                .load("https://pbs.twimg.com/media/Dagk08pXkAAEor-.jpg")
                 .crossFade()
                 .centerCrop()
                 .into(imageView_evento01);
@@ -75,7 +75,7 @@ public class AgendaMinisterialActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
                 break;

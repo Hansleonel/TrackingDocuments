@@ -82,7 +82,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="El ministro de Defensa, Jorge Kisic Wagner, inauguró el año académico del Sistema Educativo del Sector Defensa" />
+                        android:text="El ministro de Defensa, José Huerta Torres, inauguró el año académico del Sistema Educativo del Sector Defensa" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -102,7 +102,7 @@
                         <ImageView
                             android:layout_width="16dp"
                             android:layout_height="16dp"
-                            android:src="@drawable/ic_watch_black_24dp" />
+                            app:srcCompat="@drawable/ic_watch_black_24dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -116,7 +116,7 @@
                             android:layout_height="16dp"
                             android:layout_marginLeft="4dp"
                             android:layout_marginRight="4dp"
-                            android:src="@drawable/ic_insert_comment_black_24dp" />
+                            app:srcCompat="@drawable/ic_insert_comment_black_24dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -193,7 +193,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
-                        android:text="El ministro de Defensa, Jorge Kisic Wagner, dará inicio este lunes, al año escolar en la institución educativa N° 50710 Villa Virgen, ubicada en el distrito del mismo nombre, provincia de La Convención, región Cusco, en el valle de los ríos Apurímac, Ene y Mantaro (Vraem), como parte de la campaña del Gobierno..."
+                        android:text="El ministro de Defensa, José Huerta Torres, dará inicio este lunes, al año escolar en la institución educativa N° 50710 Villa Virgen, ubicada en el distrito del mismo nombre, provincia de La Convención, región Cusco, en el valle de los ríos Apurímac, Ene y Mantaro (Vraem), como parte de la campaña del Gobierno..."
                         android:textColor="@android:color/black"
                         android:textSize="12sp" />
 
@@ -414,7 +414,7 @@
                         <ImageView
                             android:layout_width="16dp"
                             android:layout_height="16dp"
-                            android:src="@drawable/ic_watch_black_24dp" />
+                            app:srcCompat="@drawable/ic_watch_black_24dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -428,7 +428,7 @@
                             android:layout_height="16dp"
                             android:layout_marginLeft="4dp"
                             android:layout_marginRight="4dp"
-                            android:src="@drawable/ic_insert_comment_black_24dp" />
+                            app:srcCompat="@drawable/ic_insert_comment_black_24dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
