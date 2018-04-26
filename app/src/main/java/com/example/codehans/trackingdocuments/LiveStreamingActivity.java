@@ -2,6 +2,7 @@ package com.example.codehans.trackingdocuments;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.widget.VideoView;
 public class LiveStreamingActivity extends AppCompatActivity {
 
     private VideoView videoView;
+    private AudioManager audioManager;
     private Uri uri;
 
     @Override
@@ -27,6 +29,8 @@ public class LiveStreamingActivity extends AppCompatActivity {
 
         Intent i = getIntent();
         Integer video = i.getIntExtra("USERLIVE", 1);
+
+        audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
 
         videoView = (VideoView) findViewById(R.id.videoView_01);
         uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.one);
@@ -40,6 +44,7 @@ public class LiveStreamingActivity extends AppCompatActivity {
 
         videoView.setVideoURI(uri);
         videoView.start();
+        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 2, 0);
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
@@ -47,14 +52,14 @@ public class LiveStreamingActivity extends AppCompatActivity {
             }
         });
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "El ejercito del peru realizando trabajos de Rescate en VIVO", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
     }
 
 }

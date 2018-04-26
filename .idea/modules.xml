@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/TrackingDocuments.iml" filepath="$PROJECT_DIR$/.idea/TrackingDocuments.iml" />
-      <module fileurl="file://C:\Users\ogtie05\Documents\MMFuncionary 1.0\TrackingDocuments\TrackingDocuments.iml" filepath="C:\Users\ogtie05\Documents\MMFuncionary 1.0\TrackingDocuments\TrackingDocuments.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

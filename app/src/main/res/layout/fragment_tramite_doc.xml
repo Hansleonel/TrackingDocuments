@@ -57,6 +57,7 @@
             android:paddingStart="10dp" />
 
         <Button
+            android:layout_marginTop="8dp"
             android:id="@+id/btn_search_doc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

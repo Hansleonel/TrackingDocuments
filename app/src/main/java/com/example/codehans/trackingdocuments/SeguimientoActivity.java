@@ -38,6 +38,8 @@ public class SeguimientoActivity extends AppCompatActivity {
     private RecyclerView recyclerView_tracking;
     private ArrayList<SeguimientoActivityContainer> ArrayListSeguimiento;
 
+    SeguimientoActivityAdapter seguimientoActivityAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,11 @@ public class SeguimientoActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Seguimiento Documento");
         setSupportActionBar(toolbar);
+
+        recyclerView_tracking = (RecyclerView) findViewById(R.id.recyclerViewTracking);
+        recyclerView_tracking.setHasFixedSize(true);
+
+        ArrayListSeguimiento = new ArrayList<SeguimientoActivityContainer>();
 
         ver_seguimiento();
 
@@ -77,9 +84,29 @@ public class SeguimientoActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            Log.d("RESPONSE CORRECTO", response.get("msg") + " ");
+                            //obtengo el JsonObject jsonObjectData dentro del JsonObject response
+                            JSONObject jsonObjectdata = response.getJSONObject("data");
+                            //obtengo el JsonArray jsonArrayRuta dentro del JsonObject jsonObjectData
+                            JSONArray jsonArrayRuta = jsonObjectdata.getJSONArray("ruta");
+                            for (int i = 0; i < jsonArrayRuta.length(); i++) {
+                                JSONObject jsonObjectRutaSeguimiento = jsonArrayRuta.getJSONObject(i);
+                                String idOficina = jsonObjectRutaSeguimiento.getString("ofc_descripcion");
+                                String dateAll = jsonObjectRutaSeguimiento.getString("ban_fechareg");
+                                String dateYear = jsonObjectRutaSeguimiento.getString("ban_annodes");
+                                String codOficina = jsonObjectRutaSeguimiento.getString("ban_ofcdes");
+                                String codDescripcion = jsonObjectRutaSeguimiento.getString("ban_refdes");
+                                String codEstado = jsonObjectRutaSeguimiento.getString("sit_codigo");
+                                String desEstado = jsonObjectRutaSeguimiento.getString("sit_descripcion");
+
+                                ArrayListSeguimiento.add(new SeguimientoActivityContainer(idOficina,dateAll,dateYear,codOficina,codDescripcion,codEstado,desEstado));
+
+                            }
+                            SeguimientoActivityAdapter adaptador = new SeguimientoActivityAdapter(ArrayListSeguimiento);
+                            recyclerView_tracking.setAdapter(adaptador);
+                            recyclerView_tracking.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
 
 
+                            Log.d("JsonObjectdata", "onResponse: " + jsonArrayRuta);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

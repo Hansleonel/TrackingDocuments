@@ -29,7 +29,7 @@
 
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerViewTracking"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignTop="@+id/verticalSeekBarWrapper"
@@ -46,11 +46,11 @@
         android:id="@+id/cardView2"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_alignEnd="@+id/recyclerView"
-        android:layout_alignLeft="@+id/recyclerView"
-        android:layout_alignRight="@+id/recyclerView"
-        android:layout_alignStart="@+id/recyclerView"
-        android:layout_below="@+id/recyclerView"
+        android:layout_alignEnd="@+id/recyclerViewTracking"
+        android:layout_alignLeft="@+id/recyclerViewTracking"
+        android:layout_alignRight="@+id/recyclerViewTracking"
+        android:layout_alignStart="@+id/recyclerViewTracking"
+        android:layout_below="@+id/recyclerViewTracking"
         android:layout_marginTop="24dp">
 
         <LinearLayout
